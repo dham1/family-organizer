@@ -1,12 +1,22 @@
 import React from 'react';
 import './App.css';
+import { Route, Switch } from 'react-router-dom';
+import Dashboard from './pages/dashboard/dashboard.component';
 
-import Dashboard from './dashboard.component';
 
+const TasksPage = () => (
+  <div>
+    <h1>TASKS</h1>
+  </div>
+);
 function App() {
   return (
     <div>
-      <Dashboard/>
+      <Switch>
+        <Route exact path='/' component={Dashboard} />
+        <Route path='/tasks' component={TasksPage} />
+      </Switch>
+
     </div>
   );
 }

@@ -1,18 +1,4 @@
-.dashboard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 80px;
-  }
-  
-  .dashboard-menu {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .menu-item {
+.menu-item {
     min-width: 30%;
     height: 240px;
     flex: 1 1 auto;
@@ -45,5 +31,7 @@
         font-size: 22px;
         color: #4a4a4a;
       }
+  
     }
   }
+  
