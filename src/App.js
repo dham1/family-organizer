@@ -2,16 +2,12 @@ import React from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import Dashboard from './pages/dashboard/dashboard.component';
-
-
-const TasksPage = () => (
-  <div>
-    <h1>TASKS</h1>
-  </div>
-);
+import TasksPage from './pages/tasks/tasks.component';
+import Header from './components/header/header.component';
 function App() {
   return (
     <div>
+      <Header/>
       <Switch>
         <Route exact path='/' component={Dashboard} />
         <Route path='/tasks' component={TasksPage} />
