@@ -11,28 +11,28 @@ class Directory extends React.Component {
                     title: "Tasks",
                     id: 1,
                     linkUrl: "tasks",
-                    imageUrl:'https://i.ibb.co/R70vBrQ/men.png'
+                    imageUrl: 'https://i.ibb.co/R70vBrQ/men.png'
                 },
                 {
                     title: "Fun Time",
                     id: 2,
                     linkUrl: "funtime",
-                    imageUrl:'https://i.ibb.co/R70vBrQ/men.png'
+                    imageUrl: 'https://i.ibb.co/R70vBrQ/men.png'
 
 
                 },
                 {
                     title: "My Family",
                     id: 3,
-                    linkUrl: "/myfamily",
-                    imageUrl:'https://i.ibb.co/R70vBrQ/men.png'
+                    linkUrl: "myfamily",
+                    imageUrl: 'https://i.ibb.co/R70vBrQ/men.png'
 
                 },
                 {
                     title: "Due soon",
                     id: 4,
                     linkUrl: "duetasks",
-                    imageUrl:'https://i.ibb.co/R70vBrQ/men.png'
+                    imageUrl: 'https://i.ibb.co/R70vBrQ/men.png'
 
                 },
 
