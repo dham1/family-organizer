@@ -7,15 +7,15 @@ import './tasks-view.styles.scss';
 import { CardGroup } from 'react-bootstrap';
 const BlockView = ({ tasks }) => (
     <CardColumns>
-        {tasks.map(({ id, ...otherTaskProps }) => (
+        {tasks.map(item => (
             <Card>
                 <Card.Body>
-                    <TaskItem key={id} {...otherTaskProps} />
+                    <TaskItem key={item.id} item={item} />
                 </Card.Body>
             </Card>
-        ))}
+        ))};
     </CardColumns>
 
 
-)
+);
 export default BlockView;

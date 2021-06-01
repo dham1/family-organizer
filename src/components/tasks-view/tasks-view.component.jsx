@@ -23,7 +23,7 @@ class TasksView extends React.Component {
                 return <BlockView tasks={data} />;
             case 2://calendar view
                 return <CalendarView tasks={data} />
-            default: <ListView tasks={data}/>
+            default: <ListView tasks={data} />
         }
     }
     render() {

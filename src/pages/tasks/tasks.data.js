@@ -11,11 +11,12 @@ const TASKS_DATA = [
                 color: "blue",
             }
         ],
-        startDate:"2021-05-19",
+        startDate: "2021-05-19",
         dueDate: "2021-06-12",
         asignee: "Diana",
         reporter: "Mama",
-        description: "Description"
+        description: "Description",
+        inCart: false
     },
     {
         id: 2,
@@ -27,11 +28,13 @@ const TASKS_DATA = [
                 color: "green",
             }
         ],
-        startDate:"2021-05-19",
+        startDate: "2021-05-19",
         dueDate: "2021-06-12",
         asignee: "Diana",
         reporter: "Tata",
-        description: "Description"
+        description: "Description",
+        inCart: false
+
 
     },
     {
@@ -44,11 +47,13 @@ const TASKS_DATA = [
                 color: "blue",
             }
         ],
-        startDate:"2021-05-19",
+        startDate: "2021-05-19",
         dueDate: "2021-06-17",
         asignee: "Diana",
         reporter: "Mama",
-        description: "Description"
+        description: "Description",
+        inCart: false
+
 
     },
     {
@@ -61,11 +66,13 @@ const TASKS_DATA = [
                 color: "green",
             }
         ],
-        startDate:"2021-05-19",
+        startDate: "2021-05-19",
         dueDate: "2021-06-15",
         asignee: "Diana",
         reporter: "Mama",
-        description: "Description"
+        description: "Description",
+        inCart: false
+
 
     },
     {
@@ -78,11 +85,13 @@ const TASKS_DATA = [
                 color: "green",
             }
         ],
-        startDate:"2021-05-19",
+        startDate: "2021-05-19",
         dueDate: "2021-06-12",
         asignee: "Tata",
         reporter: "Mama",
-        description: "Description"
+        description: "Description",
+        inCart: false
+
 
     },
     {
@@ -95,11 +104,13 @@ const TASKS_DATA = [
                 color: "green",
             }
         ],
-        startDate:"2021-05-19",
+        startDate: "2021-05-19",
         dueDate: "2021-06-12",
         asignee: "Mama",
         reporter: "Diana",
-        description: "Description"
+        description: "Description",
+        inCart: false
+
 
     },
     {
@@ -112,11 +123,13 @@ const TASKS_DATA = [
                 color: "green",
             }
         ],
-        startDate:"2021-06-11",
+        startDate: "2021-06-11",
         dueDate: "2021-06-12",
         asignee: "Diana",
         reporter: "Mama",
-        description: "Description"
+        description: "Description",
+        inCart: false
+
 
     },
     {
@@ -129,11 +142,13 @@ const TASKS_DATA = [
                 color: "green",
             }
         ],
-        startDate:"2021-05-19",
+        startDate: "2021-05-19",
         dueDate: "2021-06-12",
         asignee: "Diana",
         reporter: "Tata",
-        description: "Description"
+        description: "Description",
+        inCart: false
+
 
     },
 

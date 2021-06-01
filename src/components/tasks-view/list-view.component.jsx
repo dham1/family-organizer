@@ -3,19 +3,19 @@ import TaskItem from '../task-item/task-item.component';
 import ListGroup from 'react-bootstrap/ListGroup';
 import './tasks-view.styles.scss';
 const ListView = ({ tasks }) => (
-    <div className="list-view">
-        <ListGroup>
+        <div className="list-view">
+            <ListGroup>
 
-            {tasks.map(({ id, ...otherTaskProps }) => (
-                <ListGroup.Item>
-                    <TaskItem key={id} {...otherTaskProps} />
-                </ListGroup.Item>
+                {tasks.map(item => (
+                    <ListGroup.Item>
+                        <TaskItem item={item} />
+                    </ListGroup.Item>
 
-            ))}
+                ))}
 
-        </ListGroup>
+            </ListGroup>
 
 
-    </div>
-)
+        </div>
+    );
 export default ListView;
