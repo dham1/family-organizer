@@ -33,6 +33,7 @@ class TasksView extends React.Component {
                     <button onClick={() => { this.setState({ view: 0 }) }}>List</button>
                     <button onClick={() => { this.setState({ view: 1 }) }}>Block</button>
                     <button onClick={() => { this.setState({ view: 2 }) }}>Calendar</button>
+                  
                     {this.displayView(this.state.view, this.props.tasks)}
                 </div>
             </>
