@@ -36,7 +36,7 @@ class App extends React.Component {
       }
 
       setCurrentUser(userAuth);
-     });
+    });
   }
 
   componentWillUnmount() {
@@ -80,3 +80,28 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(App);
+
+//OBSERVABLE PATTERN -> 
+//Avem o lista de evenimente, 
+//atunci cand se intampla un anumit event observatorul va face ceva( in cazul asta va lua datele si le va actualiza)
+
+
+
+// componentDidMount() {
+//   const { setCurrentUser } = this.props;
+
+//   this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+//     if (userAuth) {
+//       const userRef = await createUserProfileDocument(userAuth);
+
+//       userRef.onSnapshot(snapShot => {
+//         setCurrentUser({
+//           id: snapShot.id,
+//           ...snapShot.data()
+//         });
+//       });
+//     }
+
+//     setCurrentUser(userAuth);
+//    });
+// }
