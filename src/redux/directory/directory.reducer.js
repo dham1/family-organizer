@@ -1,36 +1,36 @@
 const INITIAL_STATE = {
   sections: [
     {
-      title: 'hats',
-      imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
+      title: 'Cactus & Succulents',
+      imageUrl: 'https://i.ibb.co/8501Hz9/suculenta-Cal.jpg',
       id: 1,
-      linkUrl: 'shop/hats'
+      linkUrl: 'shop/succulents'
     },
     {
-      title: 'jackets',
-      imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
+      title: 'Floral Arrangements',
+      imageUrl: 'https://i.ibb.co/ThSMyz6/IMG-0402.jpg',
       id: 2,
-      linkUrl: 'shop/jackets'
+      linkUrl: 'shop/arrangements'
     },
     {
-      title: 'sneakers',
-      imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
+      title: 'Flower Plants',
+      imageUrl: 'https://i.ibb.co/tXzC0KD/lalele-Roz.jpg',
       id: 3,
-      linkUrl: 'shop/sneakers'
+      linkUrl: 'shop/flowers'
     },
     {
-      title: 'womens',
-      imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+      title: 'Green Plants',
+      imageUrl: 'https://i.ibb.co/Bf2sVRC/40736-CB3-D0-ED-4-D33-8-C15-736-DC57-ACE4-D.jpg',
       size: 'large',
       id: 4,
-      linkUrl: 'shop/womens'
+      linkUrl: 'shop/greenPlants'
     },
     {
-      title: 'mens',
-      imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
+      title: 'Purifying Plants',
+      imageUrl: 'https://i.ibb.co/bzWJBd6/0473695-B-C797-4-C27-9-FBD-451-B91928-B49.jpg',
       size: 'large',
       id: 5,
-      linkUrl: 'shop/mens'
+      linkUrl: 'shop/purifyingPlants'
     }
   ]
 };

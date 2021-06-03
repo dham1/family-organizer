@@ -1,245 +1,223 @@
 const SHOP_DATA = {
-  hats: {
+  succulents: {
     id: 1,
-    title: 'Hats',
-    routeName: 'hats',
+    title: 'Cactus & Succulents',
+    routeName: 'succulents',
     items: [
       {
         id: 1,
-        name: 'Brown Brim',
-        imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
-        price: 25
+        name: "Hairy Cactus",
+        imageUrl: 'https://i.ibb.co/nj4HjX2/IMG-0617.jpg', //cactus
+        price: 10
       },
       {
         id: 2,
-        name: 'Blue Beanie',
-        imageUrl: 'https://i.ibb.co/ypkgK0X/blue-beanie.png',
-        price: 18
+        name: 'Cactus with Yellow Spikes',
+        imageUrl: 'https://i.ibb.co/S7FJ0F0/IMG-0616.jpg', //casctus
+        price: 10
       },
       {
         id: 3,
-        name: 'Brown Cowboy',
-        imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',
-        price: 35
+        name: 'Cactus with White Spikes',
+        imageUrl: 'https://i.ibb.co/DtfvDCH/cactus-Tepos.jpg',
+        price: 10
       },
       {
         id: 4,
-        name: 'Grey Brim',
-        imageUrl: 'https://i.ibb.co/RjBLWxB/grey-brim.png',
-        price: 25
+        name: "Donkey's tail small",
+        imageUrl: 'https://i.ibb.co/8501Hz9/suculenta-Cal.jpg',
+        price: 10
       },
       {
         id: 5,
-        name: 'Green Beanie',
-        imageUrl: 'https://i.ibb.co/YTjW3vF/green-beanie.png',
-        price: 18
+        name: 'Assorted Giant Cactus 1 piece',
+        imageUrl: 'https://i.ibb.co/fXKzPdv/cactusi-Multi.jpg',
+        price: 250
       },
       {
         id: 6,
-        name: 'Palm Tree Cap',
-        imageUrl: 'https://i.ibb.co/rKBDvJX/palm-tree-cap.png',
-        price: 14
-      },
-      {
-        id: 7,
-        name: 'Red Beanie',
-        imageUrl: 'https://i.ibb.co/bLB646Z/red-beanie.png',
-        price: 18
-      },
-      {
-        id: 8,
-        name: 'Wolf Cap',
-        imageUrl: 'https://i.ibb.co/1f2nWMM/wolf-cap.png',
-        price: 14
-      },
-      {
-        id: 9,
-        name: 'Blue Snapback',
-        imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
-        price: 16
-      }
-    ]
-  },
-  sneakers: {
-    id: 2,
-    title: 'Sneakers',
-    routeName: 'sneakers',
-    items: [
-      {
-        id: 10,
-        name: 'Adidas NMD',
-        imageUrl: 'https://i.ibb.co/0s3pdnc/adidas-nmd.png',
-        price: 220
-      },
-      {
-        id: 11,
-        name: 'Adidas Yeezy',
-        imageUrl: 'https://i.ibb.co/dJbG1cT/yeezy.png',
-        price: 280
-      },
-      {
-        id: 12,
-        name: 'Black Converse',
-        imageUrl: 'https://i.ibb.co/bPmVXyP/black-converse.png',
-        price: 110
-      },
-      {
-        id: 13,
-        name: 'Nike White AirForce',
-        imageUrl: 'https://i.ibb.co/1RcFPk0/white-nike-high-tops.png',
-        price: 160
-      },
-      {
-        id: 14,
-        name: 'Nike Red High Tops',
-        imageUrl: 'https://i.ibb.co/QcvzydB/nikes-red.png',
-        price: 160
-      },
-      {
-        id: 15,
-        name: 'Nike Brown High Tops',
-        imageUrl: 'https://i.ibb.co/fMTV342/nike-brown.png',
-        price: 160
-      },
-      {
-        id: 16,
-        name: 'Air Jordan Limited',
-        imageUrl: 'https://i.ibb.co/w4k6Ws9/nike-funky.png',
-        price: 190
-      },
-      {
-        id: 17,
-        name: 'Timberlands',
-        imageUrl: 'https://i.ibb.co/Mhh6wBg/timberlands.png',
-        price: 200
-      }
-    ]
-  },
-  jackets: {
-    id: 3,
-    title: 'Jackets',
-    routeName: 'jackets',
-    items: [
-      {
-        id: 18,
-        name: 'Black Jean Shearling',
-        imageUrl: 'https://i.ibb.co/XzcwL5s/black-shearling.png',
-        price: 125
-      },
-      {
-        id: 19,
-        name: 'Blue Jean Jacket',
-        imageUrl: 'https://i.ibb.co/mJS6vz0/blue-jean-jacket.png',
-        price: 90
-      },
-      {
-        id: 20,
-        name: 'Grey Jean Jacket',
-        imageUrl: 'https://i.ibb.co/N71k1ML/grey-jean-jacket.png',
-        price: 90
-      },
-      {
-        id: 21,
-        name: 'Brown Shearling',
-        imageUrl: 'https://i.ibb.co/s96FpdP/brown-shearling.png',
-        price: 165
-      },
-      {
-        id: 22,
-        name: 'Tan Trench',
-        imageUrl: 'https://i.ibb.co/M6hHc3F/brown-trench.png',
-        price: 185
-      }
-    ]
-  },
-  womens: {
-    id: 4,
-    title: 'Womens',
-    routeName: 'womens',
-    items: [
-      {
-        id: 23,
-        name: 'Blue Tanktop',
-        imageUrl: 'https://i.ibb.co/7CQVJNm/blue-tank.png',
+        name: "Donkey's tail medium",
+        imageUrl: 'https://i.ibb.co/4MM4zfS/suculenta10.jpg',
         price: 25
       },
       {
+        id: 7,
+        name: 'Haworthia medium',
+        imageUrl: 'https://i.ibb.co/M1wHNFw/suculenta1.jpg',
+        price: 23
+      },
+
+      {
+        id: 9,
+        name: 'Assorted Haworthia set of 9',
+        imageUrl: 'https://i.ibb.co/nQ5tTPn/assoreted-succulent.jpg',
+        price: 40
+      }
+    ]
+  },
+  arrangements: {
+    id: 2,
+    title: 'Floral Arrangements',
+    routeName: 'arrangements',
+    items: [
+      {
+        id: 10,
+        name: 'Rose in a jar',
+        imageUrl: 'https://i.ibb.co/WWRGQWx/840-E86-A6-371-A-43-A3-ACCE-5-E21-F61-D96-CA.jpg', //trandafir borcan
+        price: 15
+      },
+      {
+        id: 11,
+        name: 'Aerial plants and moss',
+        imageUrl: 'https://i.ibb.co/YccZYJH/planta-Aeriana.jpg',
+        price: 50
+      },
+      {
+        id: 12,
+        name: 'Summer arrangement',
+        imageUrl: 'https://i.ibb.co/tPqknFd/IMG-1379.jpg',
+        price: 55
+      },
+      {
+        id: 13,
+        name: 'Medium pink arrangement',
+        imageUrl: 'https://i.ibb.co/LxZzjgt/IMG-2582.jpg',
+        price: 40
+      },
+      {
+        id: 14,
+        name: 'Big pink arrangement',
+        imageUrl: 'https://i.ibb.co/ThSMyz6/IMG-0402.jpg',
+        price: 80
+      },
+      {
+        id: 15,
+        name: 'Purse pink arrangement',
+        imageUrl: 'https://i.ibb.co/ZY2dL7V/IMG-0002.jpg',
+        price: 95
+      },
+      {
+        id: 16,
+        name: 'Colorful flowers',
+        imageUrl: 'https://i.ibb.co/mtKG1p8/aranjament6.jpg',
+        price: 20
+      },
+      {
+        id: 17,
+        name: 'Spring arrangement',
+        imageUrl: 'https://i.ibb.co/znT3tKZ/081-EB8-A4-D488-4-DC7-BFC2-758-DE612-E002.jpg',
+        price: 25
+      }
+    ]
+  },
+  flowers: {
+    id: 3,
+    title: 'Flower Plants',
+    routeName: 'flowers',
+    items: [
+      {
+        id: 18,
+        name: '15 red Tulips',
+        imageUrl: 'https://i.ibb.co/HKk3tF7/lalele-Ros.jpg',
+        price: 30
+      },
+      {
+        id: 19,
+        name: '15 pink Tulips',
+        imageUrl: 'https://i.ibb.co/tXzC0KD/lalele-Roz.jpg',
+        price: 35
+      },
+      {
+        id: 20,
+        name: '1 pink-ehite Tulip',
+        imageUrl: 'https://i.ibb.co/q7B28X5/lalea-Alb-Roz.jpg',
+        price: 10
+      },
+      {
+        id: 21,
+        name: 'Yellow flowers',
+        imageUrl: 'https://i.ibb.co/Pg0twCr/floare-Galbena.jpg',
+        price: 25
+      },
+
+    ]
+  },
+  greenPlants: {
+    id: 4,
+    title: 'Green Plants',
+    routeName: 'greenPlants',
+    items: [
+      {
+        id: 23,
+        name: 'Bambus',
+        imageUrl: 'https://i.ibb.co/XbXRS5f/bambus.jpg',
+        price: 32
+      },
+      {
         id: 24,
-        name: 'Floral Blouse',
-        imageUrl: 'https://i.ibb.co/4W2DGKm/floral-blouse.png',
+        name: 'Ficus',
+        imageUrl: 'https://i.ibb.co/QmrJ39g/65-F6749-F-6699-4-B59-9003-D7839-EE089-DC.jpg',
         price: 20
       },
       {
         id: 25,
-        name: 'Floral Dress',
-        imageUrl: 'https://i.ibb.co/KV18Ysr/floral-skirt.png',
+        name: 'Hosta plant',
+        imageUrl: 'https://i.ibb.co/yp7Pghm/DFC64442-8-E4-E-4642-947-E-AB1148-F419-FA.jpg',
         price: 80
       },
       {
         id: 26,
-        name: 'Red Dots Dress',
-        imageUrl: 'https://i.ibb.co/N3BN1bh/red-polka-dot-dress.png',
-        price: 80
-      },
-      {
-        id: 27,
-        name: 'Striped Sweater',
-        imageUrl: 'https://i.ibb.co/KmSkMbH/striped-sweater.png',
-        price: 45
+        name: 'Aglaonema',
+        imageUrl: 'https://i.ibb.co/qNfDKpP/44-DDF718-039-D-42-DF-9-C13-453-E08136619.jpg',
+        price: 70
       },
       {
         id: 28,
-        name: 'Yellow Track Suit',
-        imageUrl: 'https://i.ibb.co/v1cvwNf/yellow-track-suit.png',
-        price: 135
+        name: 'Green plat mix',
+        imageUrl: 'https://i.ibb.co/Bf2sVRC/40736-CB3-D0-ED-4-D33-8-C15-736-DC57-ACE4-D.jpg',
+        price: 54
       },
-      {
-        id: 29,
-        name: 'White Blouse',
-        imageUrl: 'https://i.ibb.co/qBcrsJg/white-vest.png',
-        price: 20
-      }
     ]
   },
-  mens: {
+  purifyingPlants: {
     id: 5,
-    title: 'Mens',
-    routeName: 'mens',
+    title: 'Purifying Plants',
+    routeName: 'purifyingPlants',
     items: [
       {
         id: 30,
-        name: 'Camo Down Vest',
-        imageUrl: 'https://i.ibb.co/xJS0T3Y/camo-vest.png',
-        price: 325
+        name: 'Peace lily',
+        imageUrl: 'https://i.ibb.co/F8GqmjS/purific1.jpg',
+        price: 24
       },
       {
         id: 31,
-        name: 'Floral T-shirt',
-        imageUrl: 'https://i.ibb.co/qMQ75QZ/floral-shirt.png',
-        price: 20
+        name: 'Yellow peace lily',
+        imageUrl: 'https://i.ibb.co/60mpw7W/prificator.jpg',
+        price: 34
       },
       {
         id: 32,
-        name: 'Black & White Longsleeve',
-        imageUrl: 'https://i.ibb.co/55z32tw/long-sleeve.png',
+        name: 'Spider plant',
+        imageUrl: 'https://i.ibb.co/RyQXDZj/2-AF94831-DE1-F-4125-931-D-F0-DD77-AB754-C.jpg',
         price: 25
       },
       {
         id: 33,
-        name: 'Pink T-shirt',
-        imageUrl: 'https://i.ibb.co/RvwnBL8/pink-shirt.png',
-        price: 25
+        name: 'Dwarf date palm',
+        imageUrl: 'https://i.ibb.co/YhXMs28/CEC38-A4-F-FE38-43-DD-887-A-5-EAF595-F320-F.jpg',
+        price: 60
       },
       {
         id: 34,
-        name: 'Jean Long Sleeve',
-        imageUrl: 'https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png',
+        name: "Devil's Ivy",
+        imageUrl: 'https://i.ibb.co/ChWY18Y/58-C06-A4-F-EAAB-4-EA6-81-FB-E616-A68-E5836.jpg',
         price: 40
       },
       {
         id: 35,
-        name: 'Burgundy T-shirt',
-        imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
+        name: 'Boston Fern',
+        imageUrl: 'https://i.ibb.co/bzWJBd6/0473695-B-C797-4-C27-9-FBD-451-B91928-B49.jpg',
         price: 25
       }
     ]
