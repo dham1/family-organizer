@@ -25,6 +25,8 @@ class ShopPage extends React.Component {
     const { updateCollections } = this.props;
     const collectionRef = firestore.collection('collections');
 
+    //PROMISE PATTERN style (makes api call to fetch back the data associated to this collection)
+    //with this style we get new data only when mount again
     collectionRef.get().then((snapshot) => {
       const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
       updateCollections(collectionsMap);
@@ -32,7 +34,6 @@ class ShopPage extends React.Component {
       this.setState({ loading: false });
     });
   }
-
   render() {
     const { match } = this.props;
     const { loading } = this.state;

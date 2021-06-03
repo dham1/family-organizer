@@ -84,6 +84,7 @@ export default connect(
 //OBSERVABLE PATTERN -> 
 //Avem o lista de evenimente, 
 //atunci cand se intampla un anumit event observatorul va face ceva( in cazul asta va lua datele si le va actualiza)
+//with this style we get new data live
 
 
 
@@ -104,4 +105,26 @@ export default connect(
 
 //     setCurrentUser(userAuth);
 //    });
+// }
+
+// componentWillUnmount() {
+//   this.unsubscribeFromAuth();
+// }
+
+
+
+// componentDidMount() {
+//   const { updateCollections } = this.props;
+//   const collectionRef = firestore.collection('collections');
+
+  //PROMISE PATTERN style (makes api call to fetch back the data associated to this collection)
+  //with this style we get new data only when mount again
+
+
+//   collectionRef.get().then((snapshot) => {
+//     const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
+//     updateCollections(collectionsMap);
+
+//     this.setState({ loading: false });
+//   });
 // }
