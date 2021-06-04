@@ -26,7 +26,7 @@ const INITIAL_STATE = {
       linkUrl: 'shop/green%20plants'
     },
     {
-      title: 'purifying%20plants',
+      title: 'Purifying Plants',
       imageUrl: 'https://i.ibb.co/bzWJBd6/0473695-B-C797-4-C27-9-FBD-451-B91928-B49.jpg',
       size: 'large',
       id: 5,
