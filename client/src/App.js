@@ -13,6 +13,7 @@ import Header from './components/header/header.component';
 
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
+import ContactPage from './pages/contact/contact.component';
 
 const App = ({ checkUserSession, currentUser }) => {
 
@@ -28,6 +29,7 @@ const App = ({ checkUserSession, currentUser }) => {
         <Route exact path='/' component={HomePage} />
         <Route path='/shop' component={ShopPage} />
         <Route exact path='/checkout' component={CheckoutPage} />
+        <Route path='/contact' component={ContactPage} />
         <Route
           exact
           path='/signin'
