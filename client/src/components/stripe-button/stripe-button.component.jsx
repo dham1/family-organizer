@@ -1,19 +1,31 @@
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
+import axios from 'axios';
 
 const StripeCheckoutButton = ({ price }) => {
   const priceForStripe = price * 100;
   const publishableKey = 'pk_test_51IxwMYECtLLzpHI6y9PkOWKaPNplO3AUAQfpCLkVr4uJcZBHWHHAv59QGMstMeh6m0x5uhBA7PXaQuWkPZEXfMwT00PYOoOMEK';
 
   const onToken = token => {
-    console.log(token);
-    alert('Payment Succesful!');
+    axios({
+      url: 'payment',
+      method: 'post',
+      data: {
+        amount: priceForStripe,
+        token
+      }
+    }).then(response => {
+      alert('Payment successful')
+    }).catch(error => {
+      console.log('Payment error: ', JSON.parse(error));
+      alert('There was an issue for your payment. Please make sure you use the provided credit card');
+    });
   };
 
   return (
     <StripeCheckout
       label='Pay Now'
-      name='CRWN Clothing Ltd.'
+      name='Plantify Life'
       billingAddress
       shippingAddress
       image='https://svgshare.com/i/CUz.svg'
