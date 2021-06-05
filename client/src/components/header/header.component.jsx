@@ -10,11 +10,13 @@ import { signOutStart } from '../../redux/user/user.actions';
 
 import { ReactComponent as Logo } from '../../assets/plantifyLife.svg';
 
+
 import {
   HeaderContainer,
   LogoContainer,
   OptionsContainer,
-  OptionLink
+  OptionLink,
+  SettingsIcon
 } from './header.styles';
 
 const Header = ({ currentUser, hidden, signOutStart }) => (
@@ -33,6 +35,9 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
         <OptionLink to='/signin'>SIGN IN</OptionLink>
       )}
       <CartIcon />
+      <OptionLink to='/settings'>
+        <SettingsIcon />
+      </OptionLink>
     </OptionsContainer>
     {hidden ? null : <CartDropdown />}
   </HeaderContainer>

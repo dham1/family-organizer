@@ -14,6 +14,7 @@ import Header from './components/header/header.component';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
 import ContactPage from './pages/contact/contact.component';
+import SettingsPage from './pages/settings/settings.component';
 
 const App = ({ checkUserSession, currentUser }) => {
 
@@ -41,6 +42,12 @@ const App = ({ checkUserSession, currentUser }) => {
             )
           }
         />
+        {currentUser ? (
+          <Route path='/settings' component={SettingsPage} />
+        ) : (
+          <SignInAndSignUpPage />
+        )
+        }
       </Switch>
     </div>
   );

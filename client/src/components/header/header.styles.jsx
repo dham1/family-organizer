@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { ReactComponent as SettingsIconSVG } from '../../assets/settings-gear.svg';
+
 
 export const HeaderContainer = styled.div`
   height: 80px;
@@ -40,4 +42,12 @@ export const OptionsContainer = styled.div`
 export const OptionLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
+`;
+
+export const SettingsIcon = styled(SettingsIconSVG)`
+  width: 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
