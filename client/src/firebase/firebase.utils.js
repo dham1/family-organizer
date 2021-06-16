@@ -39,6 +39,32 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
+export const getUserCartRef = async userId => {
+  const cartsRef = firestore.collection('carts').where('userId', '==', userId);
+  const snapShot = await cartsRef.get();
+
+  if (snapShot.empty) {
+    const cartDocRef = firestore.collection('carts').doc();
+    await cartDocRef.set({ userId, cartItems: [] });
+    return cartDocRef;
+  } else {
+    return snapShot.docs[0].ref;
+  }
+};
+
+// export const getUserOrderRef = async userId => {
+//   const orderRef = firestore.collection('orders').where('userId', '==', userId);
+//   const snapShot = await orderRef.get();
+
+//   if (snapShot.empty) {
+//     const orderDocRef = firestore.collection('orders').doc();
+//     await orderDocRef.set({ userId, order: [] });
+//     return orderDocRef;
+//   } else {
+//     return snapShot.docs[0].ref;
+//   }
+// };
+
 export const addCollectionAndDocuments = async (
   collectionKey,
   objectsToAdd

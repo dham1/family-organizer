@@ -73,9 +73,6 @@ export default connect(
 //Avem o lista de evenimente, 
 //atunci cand se intampla un anumit event observatorul va face ceva( in cazul asta va lua datele si le va actualiza)
 //with this style we get new data live
-
-
-
 // componentDidMount() {
 //   const { setCurrentUser } = this.props;
 
@@ -100,15 +97,12 @@ export default connect(
 // }
 
 
+//PROMISE PATTERN style (makes api call to fetch back the data associated to this collection)
+  //with this style we get new data only when mount again
 
 // componentDidMount() {
 //   const { updateCollections } = this.props;
 //   const collectionRef = firestore.collection('collections');
-
-  //PROMISE PATTERN style (makes api call to fetch back the data associated to this collection)
-  //with this style we get new data only when mount again
-
-
 //   collectionRef.get().then((snapshot) => {
 //     const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
 //     updateCollections(collectionsMap);
@@ -116,3 +110,4 @@ export default connect(
 //     this.setState({ loading: false });
 //   });
 // }
+
