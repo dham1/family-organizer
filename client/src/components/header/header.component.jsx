@@ -35,9 +35,9 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
         <OptionLink to='/signin'>SIGN IN</OptionLink>
       )}
       <CartIcon />
-      <OptionLink to='/settings'>
+      {/* <OptionLink to='/settings'>
         <SettingsIcon />
-      </OptionLink>
+      </OptionLink> */}
     </OptionsContainer>
     {hidden ? null : <CartDropdown />}
   </HeaderContainer>
