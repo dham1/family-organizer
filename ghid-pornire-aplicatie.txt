@@ -1,0 +1,6 @@
+Pentru a porni aplicatia in react se va deschide alt command prompt in directorul care contine proiectul.
+
+-	Va fi necesara instalarea directorului node_modules, acesta se va face prin a scrie in linia de comanda: “ npm install”
+-	Dupa instalare pornirea proiectului se va face prin comanda “ npm run dev” pentru a rula si partea de server
+-	*** Pentru a rula aceasta aplicatie trebuie sa va asigurati ca aveti instalat Node.js
+- aplicatia poate fi urmarita si pe https://platify-life.herokuapp.com/
