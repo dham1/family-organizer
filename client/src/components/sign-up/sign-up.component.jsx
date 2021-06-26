@@ -8,7 +8,7 @@ import { signUpStart } from '../../redux/user/user.actions';
 
 import { SignUpContainer, SignUpTitle } from './sign-up.styles';
 
-const SignUp = ({ signUpStart }) => {
+const SignUp = ({ signUpStart, stateSignUp }) => {
 
   const [userCredentials, setCredentials] = useState({
     displayName: '',
@@ -25,9 +25,18 @@ const SignUp = ({ signUpStart }) => {
 
 
     const validate = validateForm();
+    let errorMessage = "";
     if (validate) {
       signUpStart({ displayName, email, password });
+      if (stateSignUp.error) {
+        errorMessage = stateSignUp.error.message;
+      }
     }
+
+    if (errorMessage) {
+      console.log(errorMessage);
+    }
+
   };
 
   const handleChange = event => {
@@ -142,7 +151,10 @@ const mapDispatchToProps = dispatch => ({
   signUpStart: userCredentials => dispatch(signUpStart(userCredentials))
 });
 
+const mapStateToProps = state => ({
+  stateSignUp: state.user
+});
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(SignUp);

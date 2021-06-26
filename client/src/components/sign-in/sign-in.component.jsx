@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
+import { toast } from 'react-toastify';
 
 import {
   googleSignInStart,
@@ -15,7 +16,7 @@ import {
   ButtonsBarContainer
 } from './sign-in.styles';
 
-const SignIn = ({ emailSignInStart, googleSignInStart }) => {
+const SignIn = ({ emailSignInStart, googleSignInStart, state }) => {
 
   const [userCredentials, setCredentials] = useState({
     email: '',
@@ -29,8 +30,16 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
     event.preventDefault();
 
     const validated = validateForm();
+    let errorMessage = "";
     if (validated) {
       emailSignInStart(email, password);
+      if (state.error) {
+        errorMessage = state.error.message;
+      }
+    }
+
+    if (errorMessage) {
+      console.log(errorMessage);
     }
   };
 
@@ -117,7 +126,10 @@ const mapDispatchToProps = dispatch => ({
     dispatch(emailSignInStart({ email, password }))
 });
 
+const mapStateToProps = state => ({
+  state: state.user
+});
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(SignIn);
