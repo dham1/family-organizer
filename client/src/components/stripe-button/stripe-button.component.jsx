@@ -31,7 +31,7 @@ const StripeCheckoutButton = ({ price }) => {
       reply_to: "dianahamzea3@gmail.com"
     }, emailkey.USER_ID)
       .then((result) => {
-        alert("Message Sent, We will get back to you shortly", result.text);
+        console.log(result.text);
       },
         (error) => {
           alert("An error occurred, Please try again", error.text);
@@ -58,7 +58,6 @@ const StripeCheckoutButton = ({ price }) => {
       // clearCart();
 
       console.log(response);
-      alert('Payment successful');
       sendEmail(response.data.success.billing_details.name, orderNumber, response.data.success.receipt_url, price);
 
       history.push({
