@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import SettingsOverview from '../../components/settings-overview/settings-overview.styles';
 
 

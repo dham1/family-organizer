@@ -15,8 +15,7 @@ import {
   HeaderContainer,
   LogoContainer,
   OptionsContainer,
-  OptionLink,
-  SettingsIcon
+  OptionLink
 } from './header.styles';
 
 const Header = ({ currentUser, hidden, signOutStart }) => (
