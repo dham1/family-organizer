@@ -23,13 +23,17 @@ const ContactDetails = () => {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        emailjs.sendForm(`service_9rj21ne`, EmailKey.CONTACT_TEMPLATE_ID, e.target, EmailKey.USER_ID)
-            .then((result) => {
-                alert("Message Sent, We will get back to you shortly", result.text);
-            },
-                (error) => {
-                    alert("An error occurred, Please try again", error.text);
-                });
+        let validate = validateForm();
+        if (validate) {
+            emailjs.sendForm(`service_9rj21ne`, EmailKey.CONTACT_TEMPLATE_ID, e.target, EmailKey.USER_ID)
+                .then((result) => {
+                    alert("Message Sent, We will get back to you shortly", result.text);
+                },
+                    (error) => {
+                        alert("An error occurred, Please try again", error.text);
+                    });
+        }
+
 
     };
 
@@ -38,14 +42,55 @@ const ContactDetails = () => {
 
         setRequestDetails({ ...requestDetails, [name]: value });
     };
+    const validateForm = () => {
+        let email = document.forms["contactForm"]["email"].value;
+        let name = document.forms["contactForm"]["name"].value;
+        let message = document.forms["contactForm"]["message"].value;
+
+        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+        let result = true;
+        //email
+        if (!email) {
+            document.getElementById("email").innerHTML = "Email is required";
+            result = false;
+        } else if (!re.test(String(email).toLowerCase())) {
+            document.getElementById("email").innerHTML = "Invalid email format";
+            result = false;
+
+        } else {
+            document.getElementById("email").innerHTML = "";
+
+        }
+        //name
+        if (!name) {
+            document.getElementById("name").innerHTML = "Name is required"
+            result = false;
+        } else {
+            document.getElementById("name").innerHTML = ""
+
+        }
+        //message
+        if (!message) {
+            document.getElementById("message").innerHTML = "Name is required"
+            result = false;
+        } else {
+            document.getElementById("message").innerHTML = ""
+
+        }
+
+
+        return result;
+    }
     return (
         <>
             <ContactContainer>
                 <ContactTitle>Contact us or request a refund</ContactTitle>
                 <span>Send a message to us and add your order number in case of refund</span>
 
-                <form onSubmit={handleSubmit}>
+                <form name="contactForm" onSubmit={handleSubmit}>
                     <FormInput
+                        id="name"
                         name='name'
                         type='text'
                         handleChange={handleChange}
@@ -54,6 +99,7 @@ const ContactDetails = () => {
                         required
                     />
                     <FormInput
+                        id="email"
                         name='email'
                         type='email'
                         handleChange={handleChange}
@@ -62,6 +108,7 @@ const ContactDetails = () => {
                         required
                     />
                     <FormInput
+                        id="message"
                         name='message'
                         type='text'
                         value={message}

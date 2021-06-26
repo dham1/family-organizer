@@ -54,3 +54,7 @@ export const FormInputLabel = styled.label`
     ${shrinkLabelStyles}
   }
 `;
+export const ValidateError = styled.span`
+  color:red;
+
+`;

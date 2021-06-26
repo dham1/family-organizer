@@ -3,10 +3,11 @@ import React from 'react';
 import {
   GroupContainer,
   FormInputContainer,
-  FormInputLabel
+  FormInputLabel,
+  ValidateError
 } from './form-input.styles';
 
-const FormInput = ({ handleChange, label, ...props }) => (
+const FormInput = ({ handleChange, label, id, ...props }) => (
   <GroupContainer>
     <FormInputContainer onChange={handleChange} {...props} />
     {label ? (
@@ -14,6 +15,8 @@ const FormInput = ({ handleChange, label, ...props }) => (
         {label}
       </FormInputLabel>
     ) : null}
+    <ValidateError id={id}></ValidateError>
+
   </GroupContainer>
 );
 

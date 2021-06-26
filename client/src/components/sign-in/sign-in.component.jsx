@@ -28,7 +28,10 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
   const handleSubmit = async event => {
     event.preventDefault();
 
-    emailSignInStart(email, password);
+    const validated = validateForm();
+    if (validated) {
+      emailSignInStart(email, password);
+    }
   };
 
   const handleChange = event => {
@@ -37,28 +40,61 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
     setCredentials({ ...userCredentials, [name]: value });
   };
 
+  const validateForm = () => {
+    let email = document.forms["sign-in-form"]["email"].value;
+    let password = document.forms["sign-in-form"]["password"].value;
+
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    let result = true;
+    if (!email) {
+      document.getElementById("emailError").innerHTML = "Email is required";
+      result = false;
+    } else if (!re.test(String(email).toLowerCase())) {
+      document.getElementById("emailError").innerHTML = "Invalid email format";
+      result = false;
+
+    } else {
+      document.getElementById("emailError").innerHTML = "";
+
+    }
+
+    if (!password) {
+      document.getElementById("passwordError").innerHTML = "Password is required"
+      result = false;
+    } else {
+      document.getElementById("passwordError").innerHTML = ""
+
+    }
+
+    return result;
+  }
+
   return (
     <SignInContainer>
       <SignInTitle>I already have an account</SignInTitle>
       <span>Sign in with your email and password</span>
 
-      <form onSubmit={handleSubmit}>
+      <form name="sign-in-form" onSubmit={handleSubmit}>
         <FormInput
+          id="emailError"
           name='email'
           type='email'
           handleChange={handleChange}
           value={email}
-          label='email'
+          label='Email'
           required
         />
         <FormInput
+          id="passwordError"
           name='password'
           type='password'
           value={password}
           handleChange={handleChange}
-          label='password'
+          label='Password'
           required
         />
+
         <ButtonsBarContainer>
           <CustomButton type='submit'> Sign in </CustomButton>
           <CustomButton
@@ -67,7 +103,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
             isGoogleSignIn
           >
             Sign in with Google
-            </CustomButton>
+          </CustomButton>
         </ButtonsBarContainer>
       </form>
     </SignInContainer>
