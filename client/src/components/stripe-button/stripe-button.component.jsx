@@ -11,13 +11,33 @@ import {
   selectCartItems,
   selectCartTotal
 } from '../../redux/cart/cart.selectors';
+import emailkey from '../../emailkey';
+import emailjs from 'emailjs-com';
+import { useHistory } from 'react-router-dom';
 
 const StripeCheckoutButton = ({ price }) => {
 
-
-
+  const history = useHistory();
   const priceForStripe = price * 100;
   const publishableKey = 'pk_test_51IxwMYECtLLzpHI6y9PkOWKaPNplO3AUAQfpCLkVr4uJcZBHWHHAv59QGMstMeh6m0x5uhBA7PXaQuWkPZEXfMwT00PYOoOMEK';
+  const orderNumber = Math.floor(Math.random() * 1000000);
+
+  const sendEmail = async (name, orderNumber, receipt, amount) => {
+    emailjs.send(`service_9rj21ne`, emailkey.ORDER_TEMPLATE_ID, {
+      to_name: name,
+      order_number: orderNumber,
+      amount: amount,
+      receipt_url: receipt,
+      reply_to: "dianahamzea3@gmail.com"
+    }, emailkey.USER_ID)
+      .then((result) => {
+        alert("Message Sent, We will get back to you shortly", result.text);
+      },
+        (error) => {
+          alert("An error occurred, Please try again", error.text);
+        });
+
+  };
 
   const onToken = token => {
     axios({
@@ -36,8 +56,15 @@ const StripeCheckoutButton = ({ price }) => {
       // console.log(response);
       // dau la comanda response.data.success.amount sau cartTotal e mai bine;  response.data.success.receipt_url; reponse.data.email
       // clearCart();
+
+      console.log(response);
       alert('Payment successful');
-      window.location.replace("/");
+      sendEmail(response.data.success.billing_details.name, orderNumber, response.data.success.receipt_url, price);
+
+      history.push({
+        pathname: '/checkout/order',
+        state: { orderNumber: orderNumber, receipt: response.data.success.receipt_url }
+      });
 
 
     }).catch(error => {

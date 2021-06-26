@@ -19,3 +19,23 @@ export const ButtonsContainer = styled.div`
 
 
 `;
+export const ContactInfo = styled.div`
+  display: block;
+  justify-content: space-between;
+  font-size:25px;
+
+  a{
+    margin-left:10px;
+  }
+`;
+export const ContactInfoContainer = styled.div`
+  display: block;
+  justify-content: space-between;
+  padding: 70px 0;
+  text-align: center;
+  @media screen and (max-width: 800px){
+    padding:20px;
+    display: block;
+    text-align: left;
+}
+`;

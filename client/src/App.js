@@ -15,6 +15,7 @@ import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
 import ContactPage from './pages/contact/contact.component';
 import SettingsPage from './pages/settings/settings.component';
+import OrderConfirmation from './pages/order-confirmation/order-confirmation.component';
 
 const App = ({ checkUserSession, currentUser }) => {
 
@@ -31,6 +32,7 @@ const App = ({ checkUserSession, currentUser }) => {
         <Route path='/shop' component={ShopPage} />
         <Route exact path='/checkout' component={CheckoutPage} />
         <Route path='/contact' component={ContactPage} />
+        <Route path='/checkout/order' render={(props) => <OrderConfirmation {...props} />} />
         <Route
           exact
           path='/signin'
