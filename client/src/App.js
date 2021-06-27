@@ -8,13 +8,13 @@ import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import CheckoutPage from './pages/checkout/checkout.component';
+import ErrorBoundary from './components/error-boundary/error-boundary.component';
 
 import Header from './components/header/header.component';
 
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
 import ContactPage from './pages/contact/contact.component';
-import SettingsPage from './pages/settings/settings.component';
 import OrderConfirmation from './pages/order-confirmation/order-confirmation.component';
 
 const App = ({ checkUserSession, currentUser }) => {
@@ -28,28 +28,24 @@ const App = ({ checkUserSession, currentUser }) => {
       <GlobalStyle />
       <Header />
       <Switch>
-        <Route exact path='/' component={HomePage} />
-        <Route path='/shop' component={ShopPage} />
-        <Route exact path='/checkout' component={CheckoutPage} />
-        <Route path='/contact' component={ContactPage} />
-        <Route path='/checkout/order' render={(props) => <OrderConfirmation {...props} />} />
-        <Route
-          exact
-          path='/signin'
-          render={() =>
-            currentUser ? (
-              <Redirect to='/' />
-            ) : (
-              <SignInAndSignUpPage />
-            )
-          }
-        />
-        {currentUser ? (
-          <Route path='/settings' component={SettingsPage} />
-        ) : (
-          <SignInAndSignUpPage />
-        )
-        }
+        <ErrorBoundary>
+          <Route exact path='/' component={HomePage} />
+          <Route path='/shop' component={ShopPage} />
+          <Route exact path='/checkout' component={CheckoutPage} />
+          <Route path='/contact' component={ContactPage} />
+          <Route path='/checkout/order' render={(props) => <OrderConfirmation {...props} />} />
+          <Route
+            exact
+            path='/signin'
+            render={() =>
+              currentUser ? (
+                <Redirect to='/' />
+              ) : (
+                <SignInAndSignUpPage />
+              )
+            }
+          />
+        </ErrorBoundary>
       </Switch>
     </div>
   );

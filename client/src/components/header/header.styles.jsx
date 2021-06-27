@@ -45,10 +45,4 @@ export const OptionLink = styled(Link)`
   cursor: pointer;
 `;
 
-export const SettingsIcon = styled(SettingsIconSVG)`
-  width: 24px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+OptionLink.displayName = 'OptionLink';
