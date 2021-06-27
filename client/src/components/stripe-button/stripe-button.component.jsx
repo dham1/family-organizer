@@ -22,7 +22,7 @@ const StripeCheckoutButton = ({ price }) => {
   const publishableKey = 'pk_test_51IxwMYECtLLzpHI6y9PkOWKaPNplO3AUAQfpCLkVr4uJcZBHWHHAv59QGMstMeh6m0x5uhBA7PXaQuWkPZEXfMwT00PYOoOMEK';
   const orderNumber = Math.floor(Math.random() * 1000000);
 
-  const sendEmail = async (name, orderNumber, receipt, amount) => {
+  const sendEmail = (name, orderNumber, receipt, amount) => {
     emailjs.send(`service_9rj21ne`, emailkey.ORDER_TEMPLATE_ID, {
       to_name: name,
       order_number: orderNumber,
